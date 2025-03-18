@@ -41,7 +41,7 @@ const Header = () => {
     </header>
     
   );
-  <p>Welcome</p>
+  
 };
 
 export default Header;
