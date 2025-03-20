@@ -2,17 +2,14 @@ import React, { CSSProperties } from 'react';
 
 import Select from 'react-select';
 
-
-
-
-
 import {
-  ColourOption,
-  colourOptions,
-  FlavourOption,
-  GroupedOption,
-  groupedOptions,
-} from '../data';
+    CourseID,
+    CourseTitle,
+    CourseDescription,
+    InstructorID,
+    CoursePrice,
+    CourseCategory, 
+   } from '../courseData';
 
 const groupStyles = {
   display: 'flex',
