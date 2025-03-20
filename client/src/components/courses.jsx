@@ -5,6 +5,14 @@ import { useNavigate } from 'react-router-dom';
 import { useSession } from '../contexts/SessionContext';
 
     
-        <h2>Courses</h2>
+        const Courses = () => {
+            return (
+                <div>
+                    <h2>Courses</h2>
+                </div>
+            );
+        };
+        
+        export default Courses;
    
  
