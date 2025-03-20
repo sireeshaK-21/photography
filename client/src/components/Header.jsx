@@ -35,13 +35,14 @@ const Header = () => {
         <>
           <Link to="/login">Login</Link>
           <Link to="/signup">Signup</Link>
+          <Link to="/signup">Courses</Link>
         </>
       )}
       </nav>
     </header>
     
   );
-  
+  <p>Welcome</p>
 };
 
 export default Header;
