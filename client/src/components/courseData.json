@@ -1,0 +1,21 @@
+
+      const data = {
+        CourseID: "CAM1",
+        CourseTitle: "This is a title",
+        CourseDescription: "This is a description",
+        InstructorID: "456",
+        CoursePrice: "£50",
+        CourseCategory: "CAM", 
+        CreatedAt: "01/01/25"
+      };
+
+
+
+
+
+    
+   
+    }
+    
+
+
