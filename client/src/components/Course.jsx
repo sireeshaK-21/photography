@@ -92,6 +92,18 @@ return (
 </div>
 )};
 
+const CourseJason = ({course}) => {
+  return (
+    
+    <div>
+        <div>Course</div>
+        <div>{course.courseTitle}</div>
+        <div>{course.courseDescription}</div>
+        <div>{course.coursePrice}</div>
+    </div>
+    
+  )
+}
 
 
 
