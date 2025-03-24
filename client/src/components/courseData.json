@@ -1,21 +1,182 @@
-
-      const data = {
-        CourseID: "CAM1",
-        CourseTitle: "This is a title",
-        CourseDescription: "This is a description",
-        InstructorID: "456",
-        CoursePrice: "£50",
-        CourseCategory: "CAM", 
-        CreatedAt: "01/01/25"
-      };
-
-
-
-
-
-    
-   
-    }
-    
-
-
+[
+  {
+    "courseID": "PH101",
+    "courseTitle": "Photography Fundamentals",
+    "courseDescription": "A beginner-friendly course covering camera basics, exposure, and composition.",
+    "instructorId": "INS001",
+    "coursePrice": 49.99,
+    "courseCategory": "art",
+    "createdAt": "2024-03-20"
+  },
+  {
+    "courseID": "PH102",
+    "courseTitle": "Mastering Shutter Speed",
+    "courseDescription": "Learn how to control motion blur and freeze action in your photos.",
+    "instructorId": "INS002",
+    "coursePrice": 39.99,
+    "courseCategory": "lens basics",
+    "createdAt": "2024-03-19"
+  },
+  {
+    "courseID": "PH103",
+    "courseTitle": "Portrait Photography Essentials",
+    "courseDescription": "A comprehensive guide to capturing stunning portraits with natural and studio lighting.",
+    "instructorId": "INS003",
+    "coursePrice": 59.99,
+    "courseCategory": "lighting",
+    "createdAt": "2024-03-18"
+  },
+  {
+    "courseID": "PH104",
+    "courseTitle": "Rule of Thirds and Beyond",
+    "courseDescription": "Explore composition techniques to create visually appealing images.",
+    "instructorId": "INS004",
+    "coursePrice": 34.99,
+    "courseCategory": "composition",
+    "createdAt": "2024-03-17"
+  },
+  {
+    "courseID": "PH105",
+    "courseTitle": "DSLR vs Mirrorless: Which is Right for You?",
+    "courseDescription": "Compare DSLR and mirrorless cameras to determine the best fit for your needs.",
+    "instructorId": "INS005",
+    "coursePrice": 29.99,
+    "courseCategory": "lens basics",
+    "createdAt": "2024-03-16"
+  },
+  {
+    "courseID": "PH106",
+    "courseTitle": "Night Photography: Shooting in Low Light",
+    "courseDescription": "Learn techniques for capturing stunning images in low-light conditions.",
+    "instructorId": "INS006",
+    "coursePrice": 64.99,
+    "courseCategory": "lighting",
+    "createdAt": "2024-03-15"
+  },
+  {
+    "courseID": "PH107",
+    "courseTitle": "The Art of Street Photography",
+    "courseDescription": "Capture candid moments and master urban storytelling through photography.",
+    "instructorId": "INS007",
+    "coursePrice": 54.99,
+    "courseCategory": "art",
+    "createdAt": "2024-03-14"
+  },
+  {
+    "courseID": "PH108",
+    "courseTitle": "Wedding Photography Masterclass",
+    "courseDescription": "Learn how to photograph weddings professionally, from preparation to editing.",
+    "instructorId": "INS008",
+    "coursePrice": 79.99,
+    "courseCategory": "lighting",
+    "createdAt": "2024-03-13"
+  },
+  {
+    "courseID": "PH109",
+    "courseTitle": "Understanding White Balance",
+    "courseDescription": "Master color temperature and white balance for more natural-looking photos.",
+    "instructorId": "INS009",
+    "coursePrice": 27.99,
+    "courseCategory": "lighting",
+    "createdAt": "2024-03-12"
+  },
+  {
+    "courseID": "PH110",
+    "courseTitle": "Landscape Photography: From Beginner to Pro",
+    "courseDescription": "Capture breathtaking landscapes using advanced composition techniques.",
+    "instructorId": "INS010",
+    "coursePrice": 69.99,
+    "courseCategory": "composition",
+    "createdAt": "2024-03-11"
+  },
+  {
+    "courseID": "PH111",
+    "courseTitle": "Mastering the Art of Black & White Photography",
+    "courseDescription": "Discover the power of monochrome and how to create impactful black & white images.",
+    "instructorId": "INS011",
+    "coursePrice": 59.99,
+    "courseCategory": "art",
+    "createdAt": "2024-03-10"
+  },
+  {
+    "courseID": "PH112",
+    "courseTitle": "Introduction to Macro Photography",
+    "courseDescription": "Learn how to take stunning close-up shots of small subjects.",
+    "instructorId": "INS012",
+    "coursePrice": 49.99,
+    "courseCategory": "lens basics",
+    "createdAt": "2024-03-09"
+  },
+  {
+    "courseID": "PH113",
+    "courseTitle": "Astrophotography for Beginners",
+    "courseDescription": "Capture stunning images of the night sky and celestial objects.",
+    "instructorId": "INS013",
+    "coursePrice": 74.99,
+    "courseCategory": "lighting",
+    "createdAt": "2024-03-08"
+  },
+  {
+    "courseID": "PH114",
+    "courseTitle": "Cinematic Photography: Storytelling Through Images",
+    "courseDescription": "Learn how to create cinematic compositions and evoke emotions through photography.",
+    "instructorId": "INS014",
+    "coursePrice": 64.99,
+    "courseCategory": "composition",
+    "createdAt": "2024-03-07"
+  },
+  {
+    "courseID": "PH115",
+    "courseTitle": "Fashion Photography: Posing and Lighting",
+    "courseDescription": "Master fashion photography with posing techniques and studio lighting.",
+    "instructorId": "INS015",
+    "coursePrice": 89.99,
+    "courseCategory": "lighting",
+    "createdAt": "2024-03-06"
+  },
+  {
+    "courseID": "PH116",
+    "courseTitle": "Creative Light Painting Techniques",
+    "courseDescription": "Experiment with long exposure and light painting to create unique images.",
+    "instructorId": "INS016",
+    "coursePrice": 45.99,
+    "courseCategory": "lighting",
+    "createdAt": "2024-03-05"
+  },
+  {
+    "courseID": "PH117",
+    "courseTitle": "Aerial Photography with Drones",
+    "courseDescription": "Learn how to take stunning aerial shots using drones.",
+    "instructorId": "INS017",
+    "coursePrice": 99.99,
+    "courseCategory": "art",
+    "createdAt": "2024-03-04"
+  },
+  {
+    "courseID": "PH118",
+    "courseTitle": "Food Photography: Styling and Composition",
+    "courseDescription": "Capture delicious food images with expert composition and lighting tips.",
+    "instructorId": "INS018",
+    "coursePrice": 54.99,
+    "courseCategory": "composition",
+    "createdAt": "2024-03-03"
+  },
+  {
+    "courseID": "PH119",
+    "courseTitle": "Pet Photography: Capturing Personality",
+    "courseDescription": "Learn how to photograph pets and bring out their unique personalities.",
+    "instructorId": "INS019",
+    "coursePrice": 34.99,
+    "courseCategory": "art",
+    "createdAt": "2024-03-02"
+  },
+  {
+    "courseID": "PH120",
+    "courseTitle": "Long Exposure Photography: Capturing Motion",
+    "courseDescription": "Master the art of long exposure photography to create artistic motion effects.",
+    "instructorId": "INS020",
+    "coursePrice": 59.99,
+    "courseCategory": "lighting",
+    "createdAt": "2024-03-01"
+  }
+]

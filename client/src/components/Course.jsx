@@ -70,42 +70,4 @@ const Course = () => {
   );
 };
 
-
-
-const dropdown () => {
-    const [selectedOption, setSelectedOption] = useState('');
-
-    const handleChange = (event) => {
-    setSelectedOption(event.target.value);
-    };
-
-return (
-<div>
-  <label htmlFor="course-dropdown">Select Course: </label>
-  <select id="course-dropdown" value={selectedOption} onChange={handleChange}>
-    <option value="">--Select--</option>
-    <option value="CAM1">Basic Camera Operation</option>
-    <option value="CAM2">Expert Advice: Selecting the correct lens</option>
-    <option value="CAM3">Camera maintenance and repair</option>
-  </select>
-  <p>Selected option: {selectedOption}</p>
-</div>
-)};
-
-const CourseJason = ({course}) => {
-  return (
-    
-    <div>
-        <div>Course</div>
-        <div>{course.courseTitle}</div>
-        <div>{course.courseDescription}</div>
-        <div>{course.coursePrice}</div>
-    </div>
-    
-  )
-}
-
-
-
-
 export default Course;
