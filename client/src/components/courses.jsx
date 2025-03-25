@@ -59,7 +59,10 @@ const Courses = () => {
         
         {filteredCourses.map(course => (
           <Course key={course.courseID} course={course} />
-        ))}     
+        ))}  
+
+          
+      <button type="submit"> View Course Details</button>   
 
     </>
   )

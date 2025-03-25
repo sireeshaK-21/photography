@@ -1,4 +1,10 @@
-[
+[   { "courseID": "PH000",
+"courseTitle": "Add a new course",
+"courseDescription": "Provide description of new course here.",
+"instructorId": "INS000",
+"coursePrice": 49.00,
+"courseCategory": "set",
+"createdAt": "2024-03-20" },
   {
     "courseID": "PH101",
     "courseTitle": "Photography Fundamentals",

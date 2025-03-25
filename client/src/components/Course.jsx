@@ -50,18 +50,7 @@ const Course = () => {
     <form onSubmit={handleSubmit}>
 
   
-      <div>
-    <h1>Course Title </h1>
-    <h3>Course ID:</h3>
-    <h3>Category</h3>
-    <h3>Price:</h3>
-
-    <h3>Instructor:</h3>
-    <p>Description here</p>
-  </div>
-
-     
-      <button type="submit"> Add a New Course</button>
+  
     </form>
   );
 };
