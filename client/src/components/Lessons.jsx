@@ -1,47 +1,81 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { PlusCircle, Image as ImageIcon, Video } from 'lucide-react';
+import api from '../api'; // where baseURL = http://localhost:3001
+
+
+
 
 const LessonManager = () => {
   const [lessons, setLessons] = useState([]);
+  const [courses, setCourses] = useState([]);
   const [newLesson, setNewLesson] = useState({
+    course_id: '',
     title: '',
     content: '',
     photo_url: '',
     video_url: '',
   });
-
-  // Fetch all lessons
   useEffect(() => {
-    axios.get('/api/lessons')
-      .then(res => setLessons(res.data))
-      .catch(err => console.error(err));
+    api.get("/api/lessons").then(res => setLessons(res.data));
+    api.get("/api/courses").then(res => setCourses(res.data));
   }, []);
-
-  // Handle form input changes
+  
+  useEffect(() => {
+    axios
+      .get('/api/lessons')
+      .then((res) => setLessons(res.data))
+      .catch((err) => console.error(err));
+  }, []);
+  useEffect(() => {
+    axios
+      .get('/api/courses')
+      .then((res) => setCourses(res.data))
+      .catch((err) => console.error(err));
+  }, []);
   const handleChange = (e) => {
     setNewLesson({
       ...newLesson,
       [e.target.name]: e.target.value,
     });
   };
-
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('/api/lessons', newLesson)
-      .then(res => {
+    axios
+      .post('/api/lessons', newLesson)
+      .then((res) => {
         setLessons([...lessons, res.data]);
-        setNewLesson({ title: '', content: '', photo_url: '', video_url: '' });
+        setNewLesson({ course_id: '', title: '', content: '', photo_url: '', video_url: '' });
       })
-      .catch(err => console.error(err));
+      .catch((err) => console.error(err));
   };
-
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8">
-      <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 className="text-xl font-medium mb-4">Add New Lesson</h2>
-        <form onSubmit={handleSubmit} className="space-y-4">
+    <div style={{ maxWidth: '6xl', margin: '0 auto', padding: '32px' }}>
+      <div style={{ backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', padding: '24px', marginBottom: '32px' }}>
+        <h2 style={{ fontSize: '20px', fontWeight: '500', marginBottom: '16px' }}>Add New Lesson</h2>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div>
+            <select
+              name="course_id"
+              value={newLesson.course_id}
+              onChange={handleChange}
+              required
+              style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }}
+            >
+              {Array.isArray(courses) && courses.length > 0 ? (
+                <>
+                  <option value="">Select a Course</option>
+                  {courses.map((course) => (
+                    <option key={course.id} value={course.id}>
+                      {course.title}
+                    </option>
+                  ))}
+                </>
+              ) : (
+                <option value="">No courses available</option>
+              )}
+            </select>
+          </div>
           <div>
             <input
               name="title"
@@ -49,7 +83,7 @@ const LessonManager = () => {
               value={newLesson.title}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:outline-none"
+              style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }}
             />
           </div>
           <div>
@@ -59,74 +93,68 @@ const LessonManager = () => {
               value={newLesson.content}
               onChange={handleChange}
               rows="4"
-              className="w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:outline-none"
+              style={{ width: '100%', padding: '8px', border: '1px solid #ccc', borderRadius: '4px' }}
             />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="flex items-center space-x-2">
-              <ImageIcon className="w-5 h-5 text-gray-400" />
-              <input
-                name="photo_url"
-                placeholder="Photo URL"
-                value={newLesson.photo_url}
-                onChange={handleChange}
-                className="flex-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:outline-none"
-              />
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #ccc', borderRadius: '4px' }}>
+                <ImageIcon style={{ width: '20px', height: '20px', marginRight: '8px', color: '#777' }} />
+                <input
+                  name="photo_url"
+                  placeholder="Photo URL"
+                  value={newLesson.photo_url}
+                  onChange={handleChange}
+                  style={{ flex: '1', padding: '8px', border: 'none' }}
+                />
+              </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <Video className="w-5 h-5 text-gray-400" />
-              <input
-                name="video_url"
-                placeholder="Video URL"
-                value={newLesson.video_url}
-                onChange={handleChange}
-                className="flex-1 px-4 py-2 border rounded-md focus:ring-2 focus:ring-primary focus:outline-none"
-              />
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #ccc', borderRadius: '4px' }}>
+                <Video style={{ width: '20px', height: '20px', marginRight: '8px', color: '#777' }} />
+                <input
+                  name="video_url"
+                  placeholder="Video URL"
+                  value={newLesson.video_url}
+                  onChange={handleChange}
+                  style={{ flex: '1', padding: '8px', border: 'none' }}
+                />
+              </div>
             </div>
           </div>
           <button
             type="submit"
-            className="flex items-center justify-center space-x-2 w-full md:w-auto px-6 py-2 bg-primary text-white rounded-md hover:bg-opacity-90 transition-colors"
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 16px', backgroundColor: '#007BFF', color: 'white', borderRadius: '4px', border: 'none', cursor: 'pointer' }}
           >
-            <PlusCircle className="w-5 h-5" />
-            <span>Add Lesson</span>
+            <PlusCircle style={{ width: '20px', height: '20px', marginRight: '8px' }} />
+            Add Lesson
           </button>
         </form>
       </div>
-
-      <div className="bg-white rounded-lg shadow-md p-6">
-        <h2 className="text-xl font-medium mb-6">Existing Lessons</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {Array.isArray(lessons) && lessons.length > 0 ? (
-    lessons.map(lesson => (
-      <div key={lesson.id} className="border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-        <div className="aspect-video relative">
-          <img
-            src={lesson.photo_url}
-            alt={lesson.title}
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="p-4">
-          <h3 className="text-lg font-medium mb-2">{lesson.title}</h3>
-          <p className="text-gray-600 text-sm mb-4 line-clamp-3">{lesson.content}</p>
-          {lesson.video_url && (
-            <video
-              src={lesson.video_url}
-              controls
-              className="w-full rounded-md"
-            />
+      <div style={{ backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', padding: '24px' }}>
+        <h2 style={{ fontSize: '20px', fontWeight: '500', marginBottom: '16px' }}>Existing Lessons</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
+          {Array.isArray(lessons) && lessons.length > 0 ? (
+            lessons.map((lesson) => (
+              <div key={lesson.id} style={{ border: '1px solid #ddd', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
+                <div style={{ aspectRatio: '16 / 9', position: 'relative' }}>
+                  <img src={lesson.photo_url} alt={lesson.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: '16px' }}>
+                  <h3 style={{ fontSize: '16px', fontWeight: '500', marginBottom: '8px' }}>{lesson.title}</h3>
+                  <p style={{ fontSize: '14px', color: '#666', marginBottom: '8px', overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: '3', WebkitBoxOrient: 'vertical' }}>{lesson.content}</p>
+                  {lesson.video_url && (
+                    <video src={lesson.video_url} controls style={{ width: '100%', borderRadius: '4px' }} />
+                  )}
+                </div>
+              </div>
+            ))
+          ) : (
+            <p>No lessons available</p>
           )}
-        </div>
-      </div>
-    ))
-  ) : (
-    <p>No lessons available</p>
-  )}
         </div>
       </div>
     </div>
   );
 };
-
 export default LessonManager;
