@@ -48,11 +48,7 @@ const Course = () => {
   //This is view of page
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Courses Available</h2>
 
-      <p>Browse the available courses below for more details on our current study programmes</p>
-
-      <h3>Select course from dropdown menu for further details:</h3>
   
       <div>
     <h1>Course Title 1</h1>

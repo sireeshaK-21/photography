@@ -36,7 +36,14 @@ const Courses = () => {
         
   return (
         <>
-        <div>Courses</div>
+        
+        <h1>Available Courses </h1>
+
+        <div>
+
+        <h3>Browse the available courses below for more details on our current study programmes</h3>
+
+        <p>Select course from dropdown menu for further details:</p>
 
         <select name="course" id="course" onChange={onFilterCourses}>
           <option value="">Select a course</option>
@@ -45,7 +52,11 @@ const Courses = () => {
           ))}
         </select>
 
-        <h1>Filtered Courses</h1>
+        </div>
+
+        <br></br>
+
+        
         {filteredCourses.map(course => (
           <Course key={course.courseID} course={course} />
         ))}     
