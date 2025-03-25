@@ -51,7 +51,7 @@ const Course = () => {
 
   
       <div>
-    <h1>Course Title 1</h1>
+    <h1>Course Title </h1>
     <h3>Course ID:</h3>
     <h3>Category</h3>
     <h3>Price:</h3>
@@ -61,7 +61,7 @@ const Course = () => {
   </div>
 
      
-      <button type="submit"> View Course Details</button>
+      <button type="submit"> Add a New Course</button>
     </form>
   );
 };
