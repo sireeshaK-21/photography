@@ -1,0 +1,82 @@
+[
+    {
+      "title": "Photography for Beginners",
+      "description": "Learn the fundamentals of photography, including camera settings, composition, and lighting.",
+      "instructor_id": 1,
+      "price": 49.99,
+      "category": "Photography",
+      "created_at": "2024-03-25T10:00:00Z"
+    },
+    {
+      "title": "Mastering JavaScript",
+      "description": "A comprehensive JavaScript course covering ES6+ concepts, asynchronous programming, and modern frameworks.",
+      "instructor_id": 2,
+      "price": 59.99,
+      "category": "Programming",
+      "created_at": "2024-03-25T11:00:00Z"
+    },
+    {
+      "title": "React.js Fundamentals",
+      "description": "Get hands-on experience with React components, hooks, and state management.",
+      "instructor_id": 3,
+      "price": 79.99,
+      "category": "Web Development",
+      "created_at": "2024-03-25T12:00:00Z"
+    },
+    {
+      "title": "SQL for Data Analysis",
+      "description": "Learn how to write SQL queries for data analysis and business intelligence.",
+      "instructor_id": 4,
+      "price": 39.99,
+      "category": "Database",
+      "created_at": "2024-03-25T13:00:00Z"
+    },
+    {
+      "title": "Full-Stack Web Development",
+      "description": "Learn how to build full-stack applications using React, Node.js, and MySQL.",
+      "instructor_id": 5,
+      "price": 99.99,
+      "category": "Web Development",
+      "created_at": "2024-03-25T14:00:00Z"
+    },
+    {
+      "title": "Node.js API Development",
+      "description": "Master the art of building RESTful APIs using Node.js and Express.",
+      "instructor_id": 6,
+      "price": 69.99,
+      "category": "Backend Development",
+      "created_at": "2024-03-25T15:00:00Z"
+    },
+    {
+      "title": "Python for Machine Learning",
+      "description": "Learn the fundamentals of machine learning using Python and popular libraries like Scikit-Learn.",
+      "instructor_id": 7,
+      "price": 89.99,
+      "category": "Artificial Intelligence",
+      "created_at": "2024-03-25T16:00:00Z"
+    },
+    {
+      "title": "Cybersecurity Basics",
+      "description": "Understand the fundamentals of cybersecurity and how to protect systems from threats.",
+      "instructor_id": 8,
+      "price": 55.00,
+      "category": "Cybersecurity",
+      "created_at": "2024-03-25T17:00:00Z"
+    },
+    {
+      "title": "Mobile App Development with Flutter",
+      "description": "Learn how to build cross-platform mobile applications using Flutter and Dart.",
+      "instructor_id": 9,
+      "price": 79.99,
+      "category": "Mobile Development",
+      "created_at": "2024-03-25T18:00:00Z"
+    },
+    {
+      "title": "AWS Cloud Essentials",
+      "description": "Gain a foundational understanding of AWS cloud computing services.",
+      "instructor_id": 10,
+      "price": 59.99,
+      "category": "Cloud Computing",
+      "created_at": "2024-03-25T19:00:00Z"
+    }
+  ]

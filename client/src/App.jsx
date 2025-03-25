@@ -6,7 +6,8 @@ import  Signup from './components/Signup.jsx';
 // import Courses from './components/Courses.jsx';
 import { SessionProvider } from './contexts/SessionContext.jsx';
 import Gallery from './components/Gallery.jsx';
-
+import Lessons from './components/Lessons.jsx';
+import Reviews from './components/Review.jsx';
 
 const App = () => {
 
@@ -20,6 +21,8 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/lessons" element={<Lessons />} />
+        <Route path="/reviews" element={<Reviews />} />
         <Route path="/" element={<Gallery />} />
       </Routes>
       </main>

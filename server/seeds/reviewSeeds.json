@@ -1,0 +1,79 @@
+[
+    {
+      "course_id": 1,
+      "student_id": 1,
+      "rating": 5,
+      "comment": "Fantastic course! Very well structured and engaging.",
+      "created_at": "2024-03-25T10:00:00Z"
+    },
+    {
+      "course_id": 1,
+      "student_id": 2,
+      "rating": 4,
+      "comment": "Very informative, but I wish there were more hands-on exercises.",
+      "created_at": "2024-03-25T11:00:00Z"
+    },
+    {
+      "course_id": 1,
+      "student_id": 3,
+      "rating": 3,
+      "comment": "Decent course but the instructor could explain concepts better.",
+      "created_at": "2024-03-25T12:00:00Z"
+    },
+    {
+      "course_id": 2,
+      "student_id": 4,
+      "rating": 5,
+      "comment": "Absolutely loved this course! Helped me improve my skills tremendously.",
+      "created_at": "2024-03-25T13:00:00Z"
+    },
+    {
+      "course_id": 2,
+      "student_id": 5,
+      "rating": 2,
+      "comment": "Not quite what I expected. The pace was too slow for me.",
+      "created_at": "2024-03-25T14:00:00Z"
+    },
+    {
+      "course_id": 3,
+      "student_id": 6,
+      "rating": 4,
+      "comment": "Good course overall, but some lessons could use more depth.",
+      "created_at": "2024-03-25T15:00:00Z"
+    },
+    {
+      "course_id": 3,
+      "student_id": 1,
+      "rating": 5,
+      "comment": "The best online course I have taken so far!",
+      "created_at": "2024-03-25T16:00:00Z"
+    },
+    {
+      "course_id": 4,
+      "student_id": 2,
+      "rating": 3,
+      "comment": "Decent content, but I had trouble following some topics.",
+      "created_at": "2024-03-25T17:00:00Z"
+    },
+    {
+      "course_id": 4,
+      "student_id": 3,
+      "rating": 1,
+      "comment": "I didn’t find this course useful. The explanations were unclear.",
+      "created_at": "2024-03-25T18:00:00Z"
+    },
+    {
+      "course_id": 5,
+      "student_id": 4,
+      "rating": 5,
+      "comment": "Amazing course! The instructor is excellent.",
+      "created_at": "2024-03-25T19:00:00Z"
+    },
+    {
+      "course_id": 5,
+      "student_id": 5,
+      "rating": 4,
+      "comment": "Well structured and informative, but could use more examples.",
+      "created_at": "2024-03-25T20:00:00Z"
+    }
+]

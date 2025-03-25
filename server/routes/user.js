@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const  User = require("../models/User");
+const { User , Enrollment } = require("../models");
 const { signToken, authMiddleware} = require("../utils/auth");
 
 // Get current authenticated user
