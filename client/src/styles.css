@@ -92,7 +92,7 @@ button:focus-visible {
   overflow: hidden;
   width: 768px;
   max-width: 100%;
-  min-height: 480px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -105,8 +105,13 @@ button:focus-visible {
   position: relative;
   overflow: hidden;
   width: 768px;
-  max-width: 100%;
-  min-height: 480px;
+  max-width: 80%;
+  min-height: 10px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
+  padding-right: 12px;
+  padding-bottom: 12px;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -134,8 +139,18 @@ button:focus-visible {
   overflow: hidden;
   width: 768px;
   max-width: 100%;
-  min-height: 480px;
+  min-height: 320px;
   display: flex;
   flex-direction: column;
   margin: auto;
+ }
+
+ #course {
+
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  font-size: larger;
+  font-weight: bold;
+  text-align: center;
+
  }

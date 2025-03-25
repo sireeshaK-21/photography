@@ -59,18 +59,16 @@ const Courses = () => {
       </div>
 
       <div class = "coursecontainer3">
-      <div>
-        {/* Render filtered courses */}
-        {filteredCourses.length > 0 ? (
+             {filteredCourses.length > 0 ? (
           <button type="button" onClick={handleShowDetails}>
             View Course Details
           </button>
         ) : (
           <p>No courses selected</p>
         )}
-      </div>
+      
 
-      {/* Conditionally render CourseDetails */}
+ 
       {showDetails && filteredCourses.length > 0 && (
         <CourseDetails filteredCourses={filteredCourses} />
       )}
@@ -97,6 +95,7 @@ const CourseDetails = ({ filteredCourses }) => {
             <p><b>{course.courseID}</b></p>
             <p>{course.courseDescription}</p>
             <p>{course.coursePrice}</p>
+            <p>{course.courseCategory}</p>
             <p>{course.InstructorID}</p>
           </li>
         ))}
@@ -107,3 +106,6 @@ const CourseDetails = ({ filteredCourses }) => {
 };
 
 export default Courses;
+
+
+
