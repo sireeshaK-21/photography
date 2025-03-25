@@ -38,7 +38,9 @@ const Signup = () => {
     }
 
     try {
-      const response = await api.post('/api/users', { username: userName, email: email, password: password, password2: password2 });
+        
+  
+      const response = await api.post('/api/users', { name: userName, email: email, password: password, password2: password2 });
       const data = response.data;
       // Update the user in the context
       setUser({
@@ -54,7 +56,7 @@ const Signup = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Signup</h2>
+      <h2>Signup_CoursePage</h2>
       <input
         type="text"
         placeholder="Username"
