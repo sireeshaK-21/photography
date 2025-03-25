@@ -44,7 +44,9 @@ const Courses = () => {
       <div>
         <h3>Browse the available courses below for more details on our current study programmes</h3>
         <p>Select course from dropdown menu for further details:</p>
+        </div>
 
+     <div class="coursecontainer2">   
         <select name="course" id="course" onChange={onFilterCourses}>
           <option value="">Select a course</option>
           {courses.map(course => (
@@ -56,7 +58,7 @@ const Courses = () => {
       </div>
       </div>
 
-      <div class = "coursecontainer2">
+      <div class = "coursecontainer3">
       <div>
         {/* Render filtered courses */}
         {filteredCourses.length > 0 ? (
@@ -82,18 +84,17 @@ const Courses = () => {
   );
 };
 
-        
-
 const CourseDetails = ({ filteredCourses }) => {
   return (
     <div>
-        <div class = "coursecontainer3">
-      <h1>Course Details</h1>
+        <div class = "coursecontainer4">
+                <br></br>
+      <h2>Course Details</h2>
       <ul>
         {filteredCourses.map((course) => (
           <li key={course.courseID}>
-            <h3>{course.courseTitle}</h3>
-            <p>{course.courseID}</p>
+            <h1>{course.courseTitle}</h1>
+            <p><b>{course.courseID}</b></p>
             <p>{course.courseDescription}</p>
             <p>{course.coursePrice}</p>
             <p>{course.InstructorID}</p>
