@@ -4,6 +4,7 @@ const Courses = () => {
   const [courses, setCourses] = useState(coursesData);
   const [filteredCourses, setFilteredCourses] = useState([]);
   const [showDetails, setShowDetails] = useState(false);
+  const [enrollments, setEnrollments] = useState([]); // Track enrollments
   useEffect(() => {
     // You can uncomment the API call if needed
     // axios.get('/courses')
@@ -24,8 +25,14 @@ const Courses = () => {
     setShowDetails(!showDetails);
   };
   const handleEnrollCourse = (courseID) => {
-    alert(`Enrolling in course: ${courseID}`);
-    // You can implement the actual enrollment logic here
+    if (enrollments.includes(courseID)) {
+      alert("You are already enrolled in this course.");
+      return;
+    }
+    setEnrollments([...enrollments, courseID]);
+    alert(`Enrolled in course: ${courseID}`);
+    // Here you would implement your backend integration for enrollment.
+    // E.g., sending a request to your API to register the enrollment.
   };
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px' }}>
