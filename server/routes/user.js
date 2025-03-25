@@ -1,9 +1,9 @@
 const router = require("express").Router();
-const { User, Enrollment } = require("../models/User");
-const { signToken, authMiddleware } = require("../utils/auth");
+const  User = require("../models/User");
+const { signToken, authMiddleware} = require("../utils/auth");
 
 // Get current authenticated user
-router.get("/me", authMiddleware, async (req, res) => {
+router.get("/me",authMiddleware, async (req, res) => {
   try {
     const user = await User.findByPk(req.user.id, {
       attributes: { exclude: ["password"] }, // Exclude password from response
@@ -18,7 +18,7 @@ router.get("/me", authMiddleware, async (req, res) => {
 });
 
 // Enroll user in a course
-router.post("/enroll", authMiddleware, async (req, res) => {
+router.post("/enroll",authMiddleware, async (req, res) => {
   try {
     const { courseId } = req.body;
     
@@ -67,10 +67,24 @@ router.get("/", authMiddleware, async (req, res) => {
   }
 });
 
+const bcrypt = require('bcrypt'); // adding bcrypt to hash passwords
 // CREATE a new user (sign-up)
 router.post("/", async (req, res) => {
   try {
-    const newUser = await User.create(req.body);
+    console.log("Received request body:", req.body); // Debugging
+
+    if (!req.body.name || !req.body.email || !req.body.password) {
+      return res.status(400).json({ error: "Missing required fields" });
+    }
+
+    const hashedPassword = await bcrypt.hash(req.body.password, 10); // Hashing the password
+    
+    // const newUser = await User.create(req.body);
+    const newUser = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: hashedPassword, // ✅ Hashed!
+    });
 
     const token = signToken(newUser);
     res.status(201).json({ token, user: newUser });
@@ -81,7 +95,7 @@ router.post("/", async (req, res) => {
 });
 
 // UPDATE a user's information
-router.put("/:id", authMiddleware, async (req, res) => {
+router.put("/:id",authMiddleware, async (req, res) => {
   try {
     const userData = await User.update(req.body, {
       where: { id: req.params.id },

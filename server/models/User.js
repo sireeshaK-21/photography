@@ -35,5 +35,11 @@ const User = sequelize.define('User', {
   underscored: true,
   modelName: 'user'
 });
+// ✅ Add this method after the model is defined
+User.prototype.checkPassword = async function (inputPassword) {
+  const bcrypt = require('bcrypt');
+  return await bcrypt.compare(inputPassword, this.password);
+};
 
 module.exports = User;
+

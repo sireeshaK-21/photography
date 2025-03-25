@@ -1,28 +1,32 @@
+const bcrypt = require('bcrypt');
 const fs = require('fs');
 const path = require('path');
-const sequelize = require('../config/connection'); // Adjust the path if needed
-const User = require('../models/User'); // Import the User model
+const sequelize = require('../config/connection');
+const User = require('../models/User');
 
 const seedUsers = async () => {
   try {
-    // Read the JSON file
     const userData = JSON.parse(
       fs.readFileSync(path.join(__dirname, 'userSeeds.json'), 'utf-8')
     );
 
-    // Sync the database (Ensure this runs before inserting data)
-    await sequelize.sync({ force: true }); // WARNING: This will drop and recreate tables!
+    await sequelize.sync({ force: true });
 
-    // Insert users into the database
-    await User.bulkCreate(userData);
+    const hashedUsers = await Promise.all(
+      userData.map(async (user) => ({
+        ...user,
+        password: await bcrypt.hash(user.password, 10)
+      }))
+    );
+
+    await User.bulkCreate(hashedUsers);
 
     console.log("✅ Users seeded successfully!");
   } catch (err) {
     console.error("❌ Error seeding users:", err);
   } finally {
-    await sequelize.close(); // Close the database connection
+    await sequelize.close();
   }
 };
 
-// Run the function
 seedUsers();
