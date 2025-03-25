@@ -39,6 +39,7 @@ const Courses = () => {
 
   return (
     <>
+    <div class="coursecontainer1">
       <h1>Available Courses</h1>
       <div>
         <h3>Browse the available courses below for more details on our current study programmes</h3>
@@ -53,7 +54,9 @@ const Courses = () => {
           ))}
         </select>
       </div>
+      </div>
 
+      <div class = "coursecontainer2">
       <div>
         {/* Render filtered courses */}
         {filteredCourses.length > 0 ? (
@@ -72,14 +75,19 @@ const Courses = () => {
 
       {showDetails && filteredCourses.length === 0 && (
         <p>No courses selected</p>
+        
       )}
+      </div>
     </>
   );
 };
 
+        
+
 const CourseDetails = ({ filteredCourses }) => {
   return (
     <div>
+        <div class = "coursecontainer3">
       <h1>Course Details</h1>
       <ul>
         {filteredCourses.map((course) => (
@@ -92,6 +100,7 @@ const CourseDetails = ({ filteredCourses }) => {
           </li>
         ))}
       </ul>
+    </div>
     </div>
   );
 };
