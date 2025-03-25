@@ -1,10 +1,14 @@
-[   { "courseID": "PH000",
-"courseTitle": "Add a new course",
-"courseDescription": "Provide description of new course here.",
-"instructorId": "INS000",
-"coursePrice": 49.00,
-"courseCategory": "set",
-"createdAt": "2024-03-20" },
+[
+  {
+    "courseID": "PH000",
+    "courseTitle": "Add a new course",
+    "courseDescription": "Provide description of new course here.",
+    "instructorId": "INS000",
+    "coursePrice": 49.00,
+    "courseCategory": "set",
+    "createdAt": "2024-03-20",
+    "courseImage": "https://via.placeholder.com/150?text=Add+a+new+course"
+  },
   {
     "courseID": "PH101",
     "courseTitle": "Photography Fundamentals",
@@ -12,7 +16,8 @@
     "instructorId": "INS001",
     "coursePrice": 49.99,
     "courseCategory": "art",
-    "createdAt": "2024-03-20"
+    "createdAt": "2024-03-20",
+    "courseImage": "https://via.placeholder.com/150?text=Photography+Fundamentals"
   },
   {
     "courseID": "PH102",
@@ -21,7 +26,8 @@
     "instructorId": "INS002",
     "coursePrice": 39.99,
     "courseCategory": "lens basics",
-    "createdAt": "2024-03-19"
+    "createdAt": "2024-03-19",
+    "courseImage": "https://via.placeholder.com/150?text=Shutter+Speed"
   },
   {
     "courseID": "PH103",
@@ -30,7 +36,8 @@
     "instructorId": "INS003",
     "coursePrice": 59.99,
     "courseCategory": "lighting",
-    "createdAt": "2024-03-18"
+    "createdAt": "2024-03-18",
+    "courseImage": "https://via.placeholder.com/150?text=Portrait+Photography"
   },
   {
     "courseID": "PH104",
@@ -39,7 +46,8 @@
     "instructorId": "INS004",
     "coursePrice": 34.99,
     "courseCategory": "composition",
-    "createdAt": "2024-03-17"
+    "createdAt": "2024-03-17",
+    "courseImage": "https://via.placeholder.com/150?text=Rule+of+Thirds"
   },
   {
     "courseID": "PH105",
@@ -48,7 +56,8 @@
     "instructorId": "INS005",
     "coursePrice": 29.99,
     "courseCategory": "lens basics",
-    "createdAt": "2024-03-16"
+    "createdAt": "2024-03-16",
+    "courseImage": "https://via.placeholder.com/150?text=DSLR+vs+Mirrorless"
   },
   {
     "courseID": "PH106",
@@ -57,16 +66,19 @@
     "instructorId": "INS006",
     "coursePrice": 64.99,
     "courseCategory": "lighting",
-    "createdAt": "2024-03-15"
+    "createdAt": "202",
+    "courseImage": "https://via.placeholder.com/150?text=Night+Photography"
+
   },
-  {
+ {
     "courseID": "PH107",
     "courseTitle": "The Art of Street Photography",
     "courseDescription": "Capture candid moments and master urban storytelling through photography.",
     "instructorId": "INS007",
     "coursePrice": 54.99,
     "courseCategory": "art",
-    "createdAt": "2024-03-14"
+    "createdAt": "2024-03-14",
+    "courseImage": "https://via.placeholder.com/150?text=Street+Photography"
   },
   {
     "courseID": "PH108",
@@ -75,7 +87,8 @@
     "instructorId": "INS008",
     "coursePrice": 79.99,
     "courseCategory": "lighting",
-    "createdAt": "2024-03-13"
+    "createdAt": "2024-03-13",
+    "courseImage": "https://via.placeholder.com/150?text=Wedding+Photography"
   },
   {
     "courseID": "PH109",
@@ -84,7 +97,8 @@
     "instructorId": "INS009",
     "coursePrice": 27.99,
     "courseCategory": "lighting",
-    "createdAt": "2024-03-12"
+    "createdAt": "2024-03-12",
+    "courseImage": "https://via.placeholder.com/150?text=White+Balance"
   },
   {
     "courseID": "PH110",
@@ -93,7 +107,8 @@
     "instructorId": "INS010",
     "coursePrice": 69.99,
     "courseCategory": "composition",
-    "createdAt": "2024-03-11"
+    "createdAt": "2024-03-11",
+    "courseImage": "https://via.placeholder.com/150?text=Landscape+Photography"
   },
   {
     "courseID": "PH111",
@@ -102,7 +117,8 @@
     "instructorId": "INS011",
     "coursePrice": 59.99,
     "courseCategory": "art",
-    "createdAt": "2024-03-10"
+    "createdAt": "2024-03-10",
+    "courseImage": "https://via.placeholder.com/150?text=Black+and+White+Photography"
   },
   {
     "courseID": "PH112",
@@ -111,7 +127,8 @@
     "instructorId": "INS012",
     "coursePrice": 49.99,
     "courseCategory": "lens basics",
-    "createdAt": "2024-03-09"
+    "createdAt": "2024-03-09",
+    "courseImage": "https://via.placeholder.com/150?text=Macro+Photography"
   },
   {
     "courseID": "PH113",
@@ -120,7 +137,8 @@
     "instructorId": "INS013",
     "coursePrice": 74.99,
     "courseCategory": "lighting",
-    "createdAt": "2024-03-08"
+    "createdAt": "2024-03-08",
+    "courseImage": "https://via.placeholder.com/150?text=Astrophotography"
   },
   {
     "courseID": "PH114",
@@ -129,7 +147,8 @@
     "instructorId": "INS014",
     "coursePrice": 64.99,
     "courseCategory": "composition",
-    "createdAt": "2024-03-07"
+    "createdAt": "2024-03-07",
+    "courseImage": "https://via.placeholder.com/150?text=Cinematic+Photography"
   },
   {
     "courseID": "PH115",
@@ -138,7 +157,8 @@
     "instructorId": "INS015",
     "coursePrice": 89.99,
     "courseCategory": "lighting",
-    "createdAt": "2024-03-06"
+    "createdAt": "2024-03-06",
+    "courseImage": "https://via.placeholder.com/150?text=Fashion+Photography"
   },
   {
     "courseID": "PH116",
@@ -147,7 +167,8 @@
     "instructorId": "INS016",
     "coursePrice": 45.99,
     "courseCategory": "lighting",
-    "createdAt": "2024-03-05"
+    "createdAt": "2024-03-05",
+    "courseImage": "https://via.placeholder.com/150?text=Light+Painting"
   },
   {
     "courseID": "PH117",
@@ -156,7 +177,8 @@
     "instructorId": "INS017",
     "coursePrice": 99.99,
     "courseCategory": "art",
-    "createdAt": "2024-03-04"
+    "createdAt": "2024-03-04",
+    "courseImage": "https://via.placeholder.com/150?text=Aerial+Photography"
   },
   {
     "courseID": "PH118",
@@ -165,7 +187,8 @@
     "instructorId": "INS018",
     "coursePrice": 54.99,
     "courseCategory": "composition",
-    "createdAt": "2024-03-03"
+    "createdAt": "2024-03-03",
+    "courseImage": "https://via.placeholder.com/150?text=Food+Photography"
   },
   {
     "courseID": "PH119",
@@ -174,7 +197,8 @@
     "instructorId": "INS019",
     "coursePrice": 34.99,
     "courseCategory": "art",
-    "createdAt": "2024-03-02"
+    "createdAt": "2024-03-02",
+    "courseImage": "https://via.placeholder.com/150?text=Pet+Photography"
   },
   {
     "courseID": "PH120",
@@ -183,6 +207,7 @@
     "instructorId": "INS020",
     "coursePrice": 59.99,
     "courseCategory": "lighting",
-    "createdAt": "2024-03-01"
+    "createdAt": "2024-03-01",
+    "courseImage": "https://via.placeholder.com/150?text=Long+Exposure"
   }
 ]

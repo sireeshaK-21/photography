@@ -85,7 +85,7 @@ button:focus-visible {
  */
 
  .coursecontainer1 {
-  background-color: hsl(197, 65%, 49%);
+  background-color:  #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -99,7 +99,7 @@ button:focus-visible {
  }
 
  .coursecontainer2 {
-  background-color: #e43232;
+  background-color:  #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -118,9 +118,7 @@ button:focus-visible {
  }
  
 .coursecontainer3 {
-  background-color: #85ca17;
-  border-radius: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  background-color:  #f0f0f0;
   position: relative;
   overflow: hidden;
   width: 768px;
@@ -132,7 +130,7 @@ button:focus-visible {
  }
 
  .coursecontainer4 {
-  background-color: hsl(313, 80%, 44%);
+  background-color: hsl(202, 58%, 78%);
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -152,5 +150,18 @@ button:focus-visible {
   font-size: larger;
   font-weight: bold;
   text-align: center;
+
+ }
+
+ #choosecoursebutton {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
 
  }

@@ -40,6 +40,7 @@ const Courses = () => {
   return (
     <>
     <div class="coursecontainer1">
+        <br></br>
       <h1>Available Courses</h1>
       <div>
         <h3>Browse the available courses below for more details on our current study programmes</h3>
@@ -60,7 +61,7 @@ const Courses = () => {
 
       <div class = "coursecontainer3">
              {filteredCourses.length > 0 ? (
-          <button type="button" onClick={handleShowDetails}>
+          <button type="button" id="choosecoursebutton" onClick={handleShowDetails}>
             View Course Details
           </button>
         ) : (
@@ -91,7 +92,10 @@ const CourseDetails = ({ filteredCourses }) => {
       <ul>
         {filteredCourses.map((course) => (
           <li key={course.courseID}>
-            <h1>{course.courseTitle}</h1>
+     
+            <h1>{course.courseImage}</h1>
+
+            <p>{course.InstructorID}</p>
             <p><b>{course.courseID}</b></p>
             <p>{course.courseDescription}</p>
             <p>{course.coursePrice}</p>
