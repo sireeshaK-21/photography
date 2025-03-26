@@ -23,6 +23,7 @@ const rebuild = process.argv[2] === "--rebuild";
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, "../client/public")));
 
+
 // Handle GET request at the root route
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.htm"));
@@ -30,7 +31,9 @@ app.get("/", (req, res) => {
 
 // Add routes
 app.use(routes);
-app.use("/uploads", express.static("uploads"));
+
+app.use("/uploads", express.static(path.join(__dirname, "uploads"))); // ✅ good
+
 
 // Sync database
 sequelize.sync({ force: rebuild }).then(() => {
