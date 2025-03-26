@@ -48,6 +48,33 @@
     "created_at": "2024-03-25T15:00:00Z"
   },
   {
+    "course_id": 1,
+    "title": "Introduction to Photography",
+    "description": "Learn the basics of photography, including camera settings and composition.",
+    "video_url": "https://example.com/videos/intro-photography.mp4",
+    "photo_url": "https://example.com/images/photography.jpg",
+    "duration": 15,
+    "created_at": "2024-03-25T10:00:00Z"
+  },
+  {
+    "course_id": 1,
+    "title": "Understanding Exposure",
+    "description": "Explore the concepts of aperture, shutter speed, and ISO.",
+    "video_url": "https://example.com/videos/exposure.mp4",
+    "photo_url": "https://example.com/images/exposure.jpg",
+    "duration": 20,
+    "created_at": "2024-03-25T11:00:00Z"
+  },
+  {
+    "course_id": 2,
+    "title": "JavaScript Basics",
+    "description": "An introduction to JavaScript programming for beginners.",
+    "video_url": "https://example.com/videos/js-basics.mp4",
+    "photo_url": "https://example.com/images/javascript.jpg",
+    "duration": 30,
+    "created_at": "2024-03-25T12:00:00Z"
+  },
+  {
     "course_id": 4,
     "title": "SQL for Beginners",
     "description": "Learn how to write basic SQL queries.",

@@ -30,6 +30,7 @@ app.get("/", (req, res) => {
 
 // Add routes
 app.use(routes);
+app.use("/uploads", express.static("uploads"));
 
 // Sync database
 sequelize.sync({ force: rebuild }).then(() => {

@@ -1,87 +1,75 @@
-const router = require("express").Router();
-const { User } = require("../models/User");
-const {  Course } = require("../models/Course");
-const { Review } = require("../models/Review");
+const express = require("express");
+const router = express.Router();
+const Review = require("../models/Review");
+const User = require("../models/User");
+const Course = require("../models/Course");
 const { authMiddleware } = require("../utils/auth");
 
-// GET all reviews
+// 📌 **Get All Reviews**
 router.get("/", async (req, res) => {
   try {
     const reviews = await Review.findAll({
-      include: [
-        { model: User, attributes: ["name"] },
-        { model: Course, attributes: ["title"] },
-      ],
+      include: [{ model: User, attributes: ["name"] }, { model: Course, attributes: ["title"] }],
+      order: [["created_at", "DESC"]],
     });
     res.status(200).json(reviews);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error("Error fetching reviews:", err);
+    res.status(500).json({ message: "Error fetching reviews", error: err.message });
   }
 });
 
-// GET reviews for a specific course
+// 📌 **Get Reviews for a Specific Course**
 router.get("/course/:courseId", async (req, res) => {
   try {
     const reviews = await Review.findAll({
       where: { course_id: req.params.courseId },
       include: [{ model: User, attributes: ["name"] }],
+      order: [["created_at", "DESC"]],
     });
-
-    if (!reviews.length) {
-      return res.status(404).json({ message: "No reviews found for this course" });
-    }
-
     res.status(200).json(reviews);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error("Error fetching course reviews:", err);
+    res.status(500).json({ message: "Error fetching reviews", error: err.message });
   }
 });
 
-// CREATE a new review (requires authentication)
+// 📌 **Submit a New Review**
 router.post("/", authMiddleware, async (req, res) => {
   try {
     const { course_id, rating, comment } = req.body;
+    const student_id = req.user.id;
 
-    // Ensure user is enrolled before reviewing
-    const enrollment = await Enrollment.findOne({
-      where: { student_id: req.user.id, course_id },
-    });
-
-    if (!enrollment) {
-      return res.status(403).json({ message: "You must be enrolled to review this course" });
+    if (!course_id || !rating) {
+      return res.status(400).json({ message: "Course ID and rating are required" });
     }
 
-    const review = await Review.create({
+    const newReview = await Review.create({
       course_id,
-      student_id: req.user.id,
+      student_id,
       rating,
       comment,
-      created_at: new Date(),
     });
 
-    res.status(201).json(review);
+    res.status(201).json(newReview);
   } catch (err) {
-    console.error("Review creation error:", err);
-    res.status(400).json({ error: "Failed to create review" });
+    console.error("Error submitting review:", err);
+    res.status(500).json({ message: "Error submitting review", error: err.message });
   }
 });
 
-// DELETE a review (only the creator or admin can delete)
+// 📌 **Delete a Review**
 router.delete("/:id", authMiddleware, async (req, res) => {
   try {
     const review = await Review.findByPk(req.params.id);
-
-    if (!review) return res.status(404).json({ message: "Review not found" });
-
-    // Check if the user is the creator or an admin
-    if (review.student_id !== req.user.id && req.user.role !== "admin") {
-      return res.status(403).json({ message: "Not authorized to delete this review" });
+    if (!review) {
+      return res.status(404).json({ message: "Review not found" });
     }
-
     await review.destroy();
     res.status(200).json({ message: "Review deleted successfully" });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error("Error deleting review:", err);
+    res.status(500).json({ message: "Error deleting review", error: err.message });
   }
 });
 

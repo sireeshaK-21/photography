@@ -23,6 +23,10 @@ const Lesson = sequelize.define('Lesson', {
   content: {
     type: DataTypes.TEXT
   },
+  photo_url: {
+    type: DataTypes.STRING(500), // Add photo URL field
+    allowNull: true,
+  },
   video_url: {
     type: DataTypes.STRING(500)
   },
