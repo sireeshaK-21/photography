@@ -9,6 +9,16 @@ import api from '../api'; // where baseURL = http://localhost:3001
 const LessonManager = () => {
   const [lessons, setLessons] = useState([]);
   const [courses, setCourses] = useState([]);
+  const fetchLessons = async () => {
+    try {  
+      const response = await api.get('/api/lessons');
+      console.log("Lessons response:", response);
+      setLessons(response.data);
+    } catch (err) {
+      console.error('Error fetching lessons:', err.response);
+      console.log("Error response: ", err.response);
+    }
+  };
   const [newLesson, setNewLesson] = useState({
     course_id: '',
     title: '',
@@ -53,7 +63,7 @@ for (let [key, value] of formData.entries()) {
   console.log(`${key}: ${value}`);
 }
     try {
-      const response = await axios.post('/api/lessons', formData, {
+      const response = await api.post('/api/lessons', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       console.log("Server Response:", response);
@@ -154,7 +164,21 @@ for (let [key, value] of formData.entries()) {
             <div key={lesson.id} style={{ border: '1px solid #ddd', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
               <div style={{ aspectRatio: '16 / 9', position: 'relative' }}>
                 {lesson.photo_url && (
-                  <img src={lesson.photo_url} alt={lesson.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img
+                  src={
+                    lesson.photo_url.startsWith("http")
+                      ? lesson.photo_url
+                      : `http://localhost:3001${lesson.photo_url}`
+                  }
+                  alt={lesson.title}
+                  onError={() => console.error("Image failed to load:", lesson.photo_url)}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                  }}
+                />
                 )}
               </div>
               <div style={{ padding: '16px' }}>

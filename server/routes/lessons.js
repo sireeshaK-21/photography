@@ -44,7 +44,10 @@ router.post("/", authMiddleware, upload.single("photo"), async (req, res) => {
     console.log("Request body:", req.body);
 
     const { course_id, title, content, video_url } = req.body;
-    const photo_url = req.file ? `/uploads/${req.file.filename}` : null;
+   
+    const photo_url = req.file
+  ? `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`
+  : null;
 
     if (!course_id || !title) {
       return res.status(400).json({ message: "Course ID and title are required" });
