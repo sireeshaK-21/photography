@@ -1,14 +1,21 @@
 const express = require("express");
 const router = express.Router();
-const  Lesson  = require("../models/Lesson");
+const Lesson = require("../models/Lesson");
 const { authMiddleware } = require("../utils/auth");
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 
-// Configure Multer for image uploads
+// Ensure the uploads folder exists
+const uploadDir = path.join(__dirname, "../uploads");
+if (!fs.existsSync(uploadDir)) {
+  fs.mkdirSync(uploadDir, { recursive: true });
+}
+
+// Configure Multer
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads/"); // Store files in the "uploads" folder
+    cb(null, uploadDir);
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + "-" + file.originalname);
@@ -19,24 +26,23 @@ const upload = multer({
   storage,
   fileFilter: (req, file, cb) => {
     const allowedFileTypes = /jpeg|jpg|png/;
-    const extname = allowedFileTypes.test(
-      path.extname(file.originalname).toLowerCase()
-    );
+    const extname = allowedFileTypes.test(path.extname(file.originalname).toLowerCase());
     const mimetype = allowedFileTypes.test(file.mimetype);
 
     if (mimetype && extname) {
-      return cb(null, true);
+      cb(null, true);
     } else {
       cb(new Error("Images only (JPEG, JPG, PNG)"));
     }
   },
 });
 
-
-
-// 📌 **1. Create a New Lesson**
+// 📌 **Create a New Lesson**
 router.post("/", authMiddleware, upload.single("photo"), async (req, res) => {
   try {
+    console.log("File received:", req.file);
+    console.log("Request body:", req.body);
+
     const { course_id, title, content, video_url } = req.body;
     const photo_url = req.file ? `/uploads/${req.file.filename}` : null;
 
@@ -54,37 +60,37 @@ router.post("/", authMiddleware, upload.single("photo"), async (req, res) => {
 
     res.status(201).json(newLesson);
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Error creating lesson", error: err });
+    console.error("Error creating lesson:", err);
+    res.status(500).json({ message: "Error creating lesson", error: err.message });
   }
 });
 
-// 📌 **2. Get All Lessons**
+// 📌 **Get All Lessons**
 router.get("/", async (req, res) => {
   try {
     const lessons = await Lesson.findAll();
     res.status(200).json(lessons);
   } catch (err) {
-    res.status(500).json({ message: "Error retrieving lessons", error: err });
+    console.error("Error retrieving lessons:", err);
+    res.status(500).json({ message: "Error retrieving lessons", error: err.message });
   }
 });
 
-// 📌 **3. Get a Lesson by ID**
+// 📌 **Get a Lesson by ID**
 router.get("/:id", async (req, res) => {
   try {
     const lesson = await Lesson.findByPk(req.params.id);
-
     if (!lesson) {
       return res.status(404).json({ message: "Lesson not found" });
     }
-
     res.status(200).json(lesson);
   } catch (err) {
-    res.status(500).json({ message: "Error retrieving lesson", error: err });
+    console.error("Error retrieving lesson:", err);
+    res.status(500).json({ message: "Error retrieving lesson", error: err.message });
   }
 });
 
-// 📌 **4. Update a Lesson**
+// 📌 **Update a Lesson**
 router.put("/:id", authMiddleware, upload.single("photo"), async (req, res) => {
   try {
     const { title, content, video_url } = req.body;
@@ -99,30 +105,32 @@ router.put("/:id", authMiddleware, upload.single("photo"), async (req, res) => {
       title,
       content,
       video_url,
-      ...(photo_url && { photo_url }), // Only update if a new image is uploaded
+      ...(photo_url && { photo_url }),
     });
 
     res.status(200).json({ message: "Lesson updated successfully", lesson });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Error updating lesson", error: err });
+    console.error("Error updating lesson:", err);
+    res.status(500).json({ message: "Error updating lesson", error: err.message });
   }
 });
 
-// 📌 **5. Delete a Lesson**
+// 📌 **Delete a Lesson**
 router.delete("/:id", authMiddleware, async (req, res) => {
   try {
     const lesson = await Lesson.findByPk(req.params.id);
-
     if (!lesson) {
       return res.status(404).json({ message: "Lesson not found" });
     }
-
     await lesson.destroy();
     res.status(200).json({ message: "Lesson deleted successfully" });
   } catch (err) {
-    res.status(500).json({ message: "Error deleting lesson", error: err });
+    console.error("Error deleting lesson:", err);
+    res.status(500).json({ message: "Error deleting lesson", error: err.message });
   }
 });
+
+// 📌 **Serve Static Files (So Images Can Load in Frontend)**
+router.use("/uploads", express.static(path.join(__dirname, "../uploads")));
 
 module.exports = router;
