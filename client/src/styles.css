@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap');
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+}
+
+
+header {
+  background-color: #80C4B7;
+  color: #EDCBD2;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.header-logo {
+  height: 40px;
+  width: 40px;
+}
+.header-nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+header nav a,
+header nav button {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+header nav button {
+  background-color: #f00;
+  border-radius: 5px;
+}
+header nav a:hover,
+header nav button:hover {
+  text-decoration: underline;
+}
+
+.gallery-container {
+  max-width: 800px; /* Adjust the max width as needed */
+  margin: auto; /* Center the carousel */
+}
+.gallery-container .carousel .slide img {
+  width: 100%; /* Make images responsive */
+  height: 400px; /* Set a fixed height */
+  object-fit: cover; /* Ensure images maintain aspect ratio and cover the space */
+  border-radius: 15px; /* Add rounded corners */
+}
+
+/* button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+ */
