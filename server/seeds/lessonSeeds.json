@@ -1,0 +1,109 @@
+[
+{
+    "course_id": 1,
+    "title": "Introduction to Photography",
+    "description": "Learn the basics of photography, including camera settings and composition.",
+    "video_url": "https://example.com/videos/intro-photography.mp4",
+    "duration": 15,
+    "created_at": "2024-03-25T10:00:00Z"
+  },
+  {
+    "course_id": 1,
+    "title": "Understanding Exposure",
+    "description": "Explore the concepts of aperture, shutter speed, and ISO.",
+    "video_url": "https://example.com/videos/exposure.mp4",
+    "duration": 20,
+    "created_at": "2024-03-25T11:00:00Z"
+  },
+  {
+    "course_id": 2,
+    "title": "JavaScript Basics",
+    "description": "An introduction to JavaScript programming for beginners.",
+    "video_url": "https://example.com/videos/js-basics.mp4",
+    "duration": 30,
+    "created_at": "2024-03-25T12:00:00Z"
+  },
+  {
+    "course_id": 2,
+    "title": "Working with Functions",
+    "description": "Learn how to create and use functions in JavaScript.",
+    "video_url": "https://example.com/videos/js-functions.mp4",
+    "duration": 25,
+    "created_at": "2024-03-25T13:00:00Z"
+  },
+  {
+    "course_id": 3,
+    "title": "React Basics",
+    "description": "Introduction to React.js, including components and JSX.",
+    "video_url": "https://example.com/videos/react-basics.mp4",
+    "duration": 40,
+    "created_at": "2024-03-25T14:00:00Z"
+  },
+  {
+    "course_id": 3,
+    "title": "State Management in React",
+    "description": "Understanding React state and props for better UI control.",
+    "video_url": "https://example.com/videos/react-state.mp4",
+    "duration": 35,
+    "created_at": "2024-03-25T15:00:00Z"
+  },
+  {
+    "course_id": 1,
+    "title": "Introduction to Photography",
+    "description": "Learn the basics of photography, including camera settings and composition.",
+    "video_url": "https://example.com/videos/intro-photography.mp4",
+    "photo_url": "https://example.com/images/photography.jpg",
+    "duration": 15,
+    "created_at": "2024-03-25T10:00:00Z"
+  },
+  {
+    "course_id": 1,
+    "title": "Understanding Exposure",
+    "description": "Explore the concepts of aperture, shutter speed, and ISO.",
+    "video_url": "https://example.com/videos/exposure.mp4",
+    "photo_url": "https://example.com/images/exposure.jpg",
+    "duration": 20,
+    "created_at": "2024-03-25T11:00:00Z"
+  },
+  {
+    "course_id": 2,
+    "title": "JavaScript Basics",
+    "description": "An introduction to JavaScript programming for beginners.",
+    "video_url": "https://example.com/videos/js-basics.mp4",
+    "photo_url": "https://example.com/images/javascript.jpg",
+    "duration": 30,
+    "created_at": "2024-03-25T12:00:00Z"
+  },
+  {
+    "course_id": 4,
+    "title": "SQL for Beginners",
+    "description": "Learn how to write basic SQL queries.",
+    "video_url": "https://example.com/videos/sql-basics.mp4",
+    "duration": 50,
+    "created_at": "2024-03-25T16:00:00Z"
+  },
+  {
+    "course_id": 4,
+    "title": "Advanced SQL Queries",
+    "description": "Master joins, subqueries, and performance tuning in SQL.",
+    "video_url": "https://example.com/videos/sql-advanced.mp4",
+    "duration": 45,
+    "created_at": "2024-03-25T17:00:00Z"
+  },
+  {
+    "course_id": 5,
+    "title": "Node.js Basics",
+    "description": "Understand how to build server-side applications using Node.js.",
+    "video_url": "https://example.com/videos/nodejs-basics.mp4",
+    "duration": 55,
+    "created_at": "2024-03-25T18:00:00Z"
+  },
+  {
+    "course_id": 5,
+    "title": "Building REST APIs with Express",
+    "description": "Learn to create RESTful APIs using Express.js.",
+    "video_url": "https://example.com/videos/express-api.mp4",
+    "duration": 50,
+    "created_at": "2024-03-25T19:00:00Z"
+  }
+]
